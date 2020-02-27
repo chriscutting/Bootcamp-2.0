@@ -22,3 +22,19 @@ app.post("/", function(req, res){
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
 });
+
+///BMI Calculator, on the same port.
+
+app.get("/bmiCalculator", function(req, res){
+  res.sendFile(__dirname + "/bmiCalculator.html");
+});
+
+app.post("/bmiCalculator", function(req, res){
+
+  var height = Number(req.body.Height);
+  var weight = Number(req.body.Weight);
+
+  var resultBMI = height / weight;
+
+  res.send("Your BMI is " + resultBMI + "!");
+});
