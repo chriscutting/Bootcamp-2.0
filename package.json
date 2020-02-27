@@ -1,12 +1,14 @@
 {
-  "name": "my-express-server",
+  "name": "calculator",
   "version": "1.0.0",
-  "description": "My First Express",
-  "main": "server.js",
+  "description": "It's a calculator",
+  "main": "calculator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "back-end"
+  ],
   "author": "Chris Cutting",
   "license": "ISC",
   "dependencies": {
