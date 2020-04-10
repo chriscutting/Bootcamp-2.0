@@ -9,10 +9,21 @@ app.get("/", function(req, res){
 const url = "https://api.openweathermap.org/data/2.5/weather?q=Louisville&appid=c2297fd5bb9a23a3dec934458232920b&units=imperial"
 
 https.get(url, function(response){
-  console.log(response);
+  console.log(response.statusCode);
+
+  response.on("data", function(data){
+    const weatherData = JSON.parse(data)
+    const temp = weatherData.main.temp
+    const feelsLike = weatherData.main.feels_like
+    const weatherDescript = weatherData.weather[0].description
+    console.log(temp, feelsLike, weatherDescript);
+  })
+
+
 })
 
-  res.send("Server message received!")
+
+  res.send("New message received!")
 
 })
 
