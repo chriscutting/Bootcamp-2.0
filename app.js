@@ -16,14 +16,23 @@ https.get(url, function(response){
     const temp = weatherData.main.temp
     const feelsLike = weatherData.main.feels_like
     const weatherDescript = weatherData.weather[0].description
+    const icon = weatherData.weather[0].icon
+    const imgURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+
+
+
+
+    res.write("<h1>The temperature in Louisville, KY is " + temp + " degrees farenheit!</h1>");
+    res.write("<p>The weather seems like it is " + weatherDescript + "</p>");
+    res.write("<img src = " + imgURL +">");
+    res.send();
     console.log(temp, feelsLike, weatherDescript);
+
   })
 
 
 })
 
-
-  res.send("New message received!")
 
 })
 
